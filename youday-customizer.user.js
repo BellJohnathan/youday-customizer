@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Youday Interface Customizer - Technopole ATLAS
 // @namespace    http://tampermonkey.net/
-// @version      2.1.1
+// @version      2.2.0
 // @description  Modern interface customization for Youday CRM with Lucide icons, improved layouts, and enhanced UX
-// @author       Johnathan Bell - Test
+// @author       Johnathan Bell
 // @match        https://youday.app/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youday.fr
 // @grant        none
@@ -50,6 +50,233 @@
             /* Hide Footer */
             .page-footer {
                 display: none !important;
+            }
+
+            /* ================================================== */
+            /* LOGIN PAGE */
+            /* ================================================== */
+
+            /* Hide background image - user will add SVG gradient later */
+            body.login .backstretch {
+                display: none !important;
+            }
+
+            /* Temporary neutral background until SVG gradient is added */
+            body.login {
+                background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%) !important;
+                min-height: 100vh;
+            }
+
+            /* Hide copyright */
+            body.login .copyright {
+                display: none !important;
+            }
+
+            /* Replace logo with Technopole ATLAS */
+            body.login .logo img {
+                content: url('https://i.imgur.com/UloIfPD.png') !important;
+                max-height: 60px !important;
+                width: auto !important;
+            }
+
+            /* Login card container */
+            body.login .content {
+                background: #ffffff !important;
+                border-radius: 12px !important;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1) !important;
+                padding: 40px !important;
+                max-width: 420px !important;
+                margin: 0 auto !important;
+                border: 1px solid #e2e8f0 !important;
+            }
+
+            /* Form title */
+            body.login .form-title {
+                color: #0f172a !important;
+                font-size: 20px !important;
+                font-weight: 600 !important;
+                margin-bottom: 24px !important;
+                text-align: center !important;
+            }
+
+            /* Form groups spacing */
+            body.login .form-group {
+                margin-bottom: 20px !important;
+            }
+
+            /* Input fields */
+            body.login .form-control {
+                border: 1px solid #e2e8f0 !important;
+                border-radius: 8px !important;
+                padding: 12px 12px 12px 44px !important;
+                font-size: 14px !important;
+                color: #0f172a !important;
+                background: #ffffff !important;
+                transition: all 0.2s ease !important;
+                height: 48px !important;
+            }
+
+            body.login .form-control:focus {
+                border-color: #3b82f6 !important;
+                box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+                outline: none !important;
+            }
+
+            body.login .form-control::placeholder {
+                color: #94a3b8 !important;
+            }
+
+            /* Input icons */
+            body.login .input-icon {
+                position: relative !important;
+            }
+
+            body.login .input-icon > i {
+                position: absolute !important;
+                left: 14px !important;
+                top: 50% !important;
+                transform: translateY(-50%) !important;
+                color: #94a3b8 !important;
+                font-size: 16px !important;
+                z-index: 2 !important;
+            }
+
+            /* Primary button */
+            body.login .btn.blue {
+                background-color: #0f172a !important;
+                border: 1px solid #0f172a !important;
+                color: #ffffff !important;
+                border-radius: 8px !important;
+                padding: 12px 24px !important;
+                font-weight: 600 !important;
+                font-size: 14px !important;
+                transition: all 0.2s ease !important;
+                height: 48px !important;
+            }
+
+            body.login .btn.blue:hover {
+                background-color: #1e293b !important;
+                border-color: #1e293b !important;
+                box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3) !important;
+                transform: translateY(-1px) !important;
+            }
+
+            /* Back button (password reset form) */
+            body.login #back-btn {
+                background: #ffffff !important;
+                border: 1px solid #e5e7eb !important;
+                color: #1f2937 !important;
+                border-radius: 8px !important;
+                padding: 12px 24px !important;
+                font-weight: 500 !important;
+                transition: all 0.2s ease !important;
+                height: 48px !important;
+            }
+
+            body.login #back-btn:hover {
+                background: #f9fafb !important;
+                border-color: #d1d5db !important;
+            }
+
+            /* Checkbox styling */
+            body.login .checkbox {
+                color: #64748b !important;
+                font-size: 13px !important;
+            }
+
+            body.login .checkbox input[type="checkbox"] {
+                accent-color: #0f172a !important;
+            }
+
+            /* Form actions layout */
+            body.login .form-actions {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                margin-top: 24px !important;
+            }
+
+            /* Links */
+            body.login .forget-password a,
+            body.login .create-account a {
+                color: #3b82f6 !important;
+                font-weight: 500 !important;
+                text-decoration: none !important;
+                transition: color 0.2s ease !important;
+            }
+
+            body.login .forget-password a:hover,
+            body.login .create-account a:hover {
+                color: #1d4ed8 !important;
+                text-decoration: underline !important;
+            }
+
+            /* Forget password & create account sections */
+            body.login .forget-password,
+            body.login .create-account {
+                text-align: center !important;
+                margin-top: 20px !important;
+                padding-top: 20px !important;
+                border-top: 1px solid #f1f5f9 !important;
+            }
+
+            body.login .forget-password h4,
+            body.login .create-account p {
+                color: #64748b !important;
+                font-size: 13px !important;
+                margin: 0 !important;
+            }
+
+            /* Alert boxes */
+            body.login .alert-danger {
+                background-color: rgba(239, 68, 68, 0.1) !important;
+                border: 1px solid rgba(239, 68, 68, 0.2) !important;
+                color: #991b1b !important;
+                border-radius: 8px !important;
+                padding: 12px 16px !important;
+                font-size: 13px !important;
+            }
+
+            body.login .alert-info {
+                background-color: rgba(59, 130, 246, 0.1) !important;
+                border: 1px solid rgba(59, 130, 246, 0.2) !important;
+                color: #1d4ed8 !important;
+                border-radius: 8px !important;
+                padding: 12px 16px !important;
+                font-size: 13px !important;
+            }
+
+            /* Modal styling (app selection) */
+            body.login .modal-content {
+                border-radius: 12px !important;
+                border: none !important;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+            }
+
+            body.login .modal-header {
+                border-bottom: 1px solid #f1f5f9 !important;
+                padding: 20px 24px !important;
+            }
+
+            body.login .modal-title {
+                color: #0f172a !important;
+                font-weight: 600 !important;
+                font-size: 18px !important;
+            }
+
+            body.login .modal-body {
+                padding: 24px !important;
+            }
+
+            body.login .modal-footer {
+                border-top: 1px solid #f1f5f9 !important;
+                padding: 16px 24px !important;
+            }
+
+            /* Select dropdown in modal */
+            body.login .modal select.form-control {
+                padding-left: 44px !important;
+                cursor: pointer !important;
             }
 
             /* ================================================== */
@@ -699,18 +926,6 @@
         `;
 
         document.head.appendChild(style);
-    }
-
-    function initializeOrganismesEnhancements() {
-        // Check if we're on the Organismes section
-        const checkSection = setInterval(() => {
-            const organismesTab = document.querySelector('#maintabbar-ZZ8BB1DCF2');
-            if (organismesTab && organismesTab.closest('li').classList.contains('current')) {
-                reorganizeToolbar();
-                hideRedundantSearchTags();
-                clearInterval(checkSection);
-            }
-        }, 500);
     }
 
     function initializeOrganismesEnhancements() {
