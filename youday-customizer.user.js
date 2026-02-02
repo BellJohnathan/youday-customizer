@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youday Interface Customizer - Technopole ATLAS
 // @namespace    http://tampermonkey.net/
-// @version      2.2.1
+// @version      2.2.2
 // @description  Modern interface customization for Youday CRM with Lucide icons, improved layouts, and enhanced UX
 // @author       Johnathan Bell
 // @match        https://youday.app/*
@@ -63,7 +63,7 @@
 
             /* Temporary neutral background until SVG gradient is added */
             body.login {
-                background: linear-gradient(90deg, #7b84ff 0.000%, #68a5ff 16.667%, #5fc6ff 33.333%, #63e5fc 50.000%, #73ffcd 66.667%, #8dff9d 83.333%, #aeff6f 100.000%)
+                background: linear-gradient(90deg, #7b84ff 0.000%, #68a5ff 16.667%, #5fc6ff 33.333%, #63e5fc 50.000%, #73ffcd 66.667%, #8dff9d 83.333%, #aeff6f 100.000%);
                 min-height: 100vh;
             }
 
@@ -126,7 +126,7 @@
                 border-left: 0 !important;
             }
 
-            form.login-form > div:nth-child(2) > div > i {
+            form.login-form > div:nth-child(2) > div > i, form.login-form > div:nth-child(3) > div > i {
                 display: none;
             }
 
