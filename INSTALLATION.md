@@ -58,13 +58,4 @@ Vous verrez immédiatement:
 2. Cliquez sur le script "Youday Interface Customizer"
 3. Basculez l'interrupteur sur OFF
 
-## 📧 Contact
 
-Pour toute question ou problème:
-- GitHub Issues: [Lien vers issues]
-- Email: [Votre email]
-- Teams: [Canal Teams si applicable]
-
----
-
-**Version 2.1.0** | Technopole ATLAS | Fait avec ❤️ pour l'équipe
