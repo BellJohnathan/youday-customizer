@@ -3,13 +3,13 @@
 // @namespace    http://tampermonkey.net/
 // @version      2.1.0
 // @description  Modern interface customization for Youday CRM with Lucide icons, improved layouts, and enhanced UX
-// @author       Technopole ATLAS
+// @author       Johnathan Bell
 // @match        https://youday.youday.fr/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youday.fr
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/YOUR-GITHUB-USERNAME/youday-customizer/main/youday-customizer.user.js
-// @downloadURL  https://raw.githubusercontent.com/YOUR-GITHUB-USERNAME/youday-customizer/main/youday-customizer.user.js
-// @supportURL   https://github.com/YOUR-GITHUB-USERNAME/youday-customizer/issues
+// @updateURL    https://raw.githubusercontent.com/BellJohnathan/youday-customizer/main/youday-customizer.user.js
+// @downloadURL  https://raw.githubusercontent.com/BellJohnathan/youday-customizer/main/youday-customizer.user.js
+// @supportURL   https://github.com/BellJohnathan/youday-customizer/issues
 // ==/UserScript==
 
 (function() {
