@@ -63,7 +63,7 @@
 
             /* Temporary neutral background until SVG gradient is added */
             body.login {
-                background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%) !important;
+                background: linear-gradient(90deg, #7b84ff 0.000%, #68a5ff 16.667%, #5fc6ff 33.333%, #63e5fc 50.000%, #73ffcd 66.667%, #8dff9d 83.333%, #aeff6f 100.000%)
                 min-height: 100vh;
             }
 
@@ -86,7 +86,7 @@
                 box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1) !important;
                 padding: 40px !important;
                 max-width: 420px !important;
-                margin: 0 auto !important;
+                margin: 80px auto !important;
                 border: 1px solid #e2e8f0 !important;
             }
 
@@ -120,6 +120,14 @@
                 border-color: #3b82f6 !important;
                 box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
                 outline: none !important;
+            }
+
+            .login .content .input-icon {
+                border-left: 0 !important;
+            }
+
+            form.login-form > div:nth-child(2) > div > i {
+                display: none;
             }
 
             body.login .form-control::placeholder {
