@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youday Interface Customizer - Technopole ATLAS
 // @namespace    http://tampermonkey.net/
-// @version      2.2.0
+// @version      2.2.1
 // @description  Modern interface customization for Youday CRM with Lucide icons, improved layouts, and enhanced UX
 // @author       Johnathan Bell
 // @match        https://youday.app/*
