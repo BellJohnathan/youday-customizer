@@ -1,4 +1,4 @@
-# Youday Interface Customizer - Technopole ATLAS
+# Youday Interface Customizer
 
 🎨 Modern interface customization for Youday CRM with enhanced UX, Lucide icons, and improved layouts.
 
