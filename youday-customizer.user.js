@@ -74,7 +74,7 @@
 
             /* Replace logo with Technopole ATLAS */
             body.login .logo img {
-                content: url('https://i.imgur.com/UloIfPD.png') !important;
+                content: url('https://raw.githubusercontent.com/BellJohnathan/youday-customizer/refs/heads/main/logo_blanc_horizontal.svg') !important;
                 max-height: 60px !important;
                 width: auto !important;
             }
