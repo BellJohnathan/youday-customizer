@@ -108,7 +108,7 @@
             body.login .form-control {
                 border: 1px solid #e2e8f0 !important;
                 border-radius: 8px !important;
-                padding: 12px 12px 12px 44px !important;
+                padding: 12px 12px 12px 16px !important;
                 font-size: 14px !important;
                 color: #0f172a !important;
                 background: #ffffff !important;
