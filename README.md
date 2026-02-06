@@ -4,13 +4,12 @@
 
 ## 📦 Installation
 
-### Prerequisites
-Install Tampermonkey browser extension:
+### Step 1 - Install Tampermonkey
 - [Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
 - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)
 - [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd)
 
-### Install Script
+### Step 2 - Install Script
 
 **Option 1: Direct Install (Recommended)**
 1. Click this link: [Install Youday Customizer](https://raw.githubusercontent.com/BellJohnathan/youday-customizer/main/youday-customizer.user.js)
