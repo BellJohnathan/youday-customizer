@@ -1,15 +1,15 @@
 // ==UserScript==
 // @name         Youday Interface Customizer
 // @namespace    http://tampermonkey.net/
-// @version      2.5.1
+// @version      2.3.2
 // @description  Modern interface customization for Youday CRM with Lucide icons, improved layouts, and enhanced UX
 // @author       Johnathan Bell
 // @match        https://youday.app/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youday.fr
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/BellJohnathan/youday-customizer/main/youday-customizer.user.js
-// @downloadURL  https://raw.githubusercontent.com/BellJohnathan/youday-customizer/main/youday-customizer.user.js
-// @supportURL   https://github.com/BellJohnathan/youday-customizer/issues
+// @updateURL    https://raw.githubusercontent.com/YOUR-GITHUB-USERNAME/youday-customizer/main/youday-customizer.user.js
+// @downloadURL  https://raw.githubusercontent.com/YOUR-GITHUB-USERNAME/youday-customizer/main/youday-customizer.user.js
+// @supportURL   https://github.com/YOUR-GITHUB-USERNAME/youday-customizer/issues
 // ==/UserScript==
 
 (function() {
@@ -74,7 +74,7 @@
 
             /* Replace logo with Technopole ATLAS - LOGIN PAGE */
             body.login .logo img {
-                content: url('https://raw.githubusercontent.com/BellJohnathan/youday-customizer/main/logo_blanc_horizontal.svg') !important;
+                content: url('https://raw.githubusercontent.com/YOUR-GITHUB-USERNAME/youday-customizer/main/assets/logos/technopole-atlas-login.svg') !important;
                 max-height: 60px !important;
                 width: auto !important;
             }
@@ -99,6 +99,19 @@
                 text-align: center !important;
             }
 
+            /* Override form title text */
+            body.login .form-title::before {
+                content: 'Connexion' !important;
+            }
+
+            body.login .form-title {
+                font-size: 0 !important;
+            }
+
+            body.login .form-title::before {
+                font-size: 20px !important;
+            }
+
             /* Form groups spacing */
             body.login .form-group {
                 margin-bottom: 20px !important;
@@ -108,7 +121,7 @@
             body.login .form-control {
                 border: 1px solid #e2e8f0 !important;
                 border-radius: 8px !important;
-                padding: 12px 12px 12px 16px !important;
+                padding: 12px 12px 12px 44px !important;
                 font-size: 14px !important;
                 color: #0f172a !important;
                 background: #ffffff !important;
@@ -188,20 +201,37 @@
 
             /* Checkbox styling */
             body.login .checkbox {
-                color: #64748b !important;
-                font-size: 13px !important;
+                color: #94a3b8 !important;
+                font-size: 11px !important;
+                margin: 8px 0 0 0 !important;
+                text-align: left !important;
             }
 
             body.login .checkbox input[type="checkbox"] {
                 accent-color: #0f172a !important;
+                width: 14px !important;
+                height: 14px !important;
+                margin-right: 6px !important;
             }
 
             /* Form actions layout */
             body.login .form-actions {
                 display: flex !important;
-                align-items: center !important;
-                justify-content: space-between !important;
+                flex-direction: column !important;
+                align-items: stretch !important;
                 margin-top: 24px !important;
+            }
+
+            /* Checkbox comes first, aligned left */
+            body.login .form-actions .checkbox {
+                order: 1 !important;
+                margin-bottom: 16px !important;
+            }
+
+            /* Button comes second, takes full width */
+            body.login .form-actions .btn.blue {
+                order: 2 !important;
+                width: 100% !important;
             }
 
             /* Links */
@@ -293,7 +323,7 @@
 
             /* Navbar Logo */
             #appLogo {
-                content: url('https://raw.githubusercontent.com/BellJohnathan/youday-customizer/main/logo_transparent_horizontal.svg') !important;
+                content: url('https://raw.githubusercontent.com/YOUR-GITHUB-USERNAME/youday-customizer/main/assets/logos/technopole-atlas-navbar.svg') !important;
                 max-height: 40px;
                 width: auto;
             }
