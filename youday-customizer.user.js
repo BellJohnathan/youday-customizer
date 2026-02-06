@@ -74,7 +74,7 @@
 
             /* Replace logo with Technopole ATLAS - LOGIN PAGE */
             body.login .logo img {
-                content: url('https://raw.githubusercontent.com/YOUR-GITHUB-USERNAME/youday-customizer/main/assets/logos/technopole-atlas-login.svg') !important;
+                content: url('https://raw.githubusercontent.com/BellJohnathan/youday-customizer/main/logo_blanc_horizontal.svg') !important;
                 max-height: 60px !important;
                 width: auto !important;
             }
@@ -293,7 +293,7 @@
 
             /* Navbar Logo */
             #appLogo {
-                content: url('https://raw.githubusercontent.com/YOUR-GITHUB-USERNAME/youday-customizer/main/assets/logos/technopole-atlas-navbar.svg') !important;
+                content: url('https://raw.githubusercontent.com/BellJohnathan/youday-customizer/main/logo_transparent_horizontal.svg') !important;
                 max-height: 40px;
                 width: auto;
             }
