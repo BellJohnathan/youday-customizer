@@ -7,9 +7,9 @@
 // @match        https://youday.app/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youday.fr
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/YOUR-GITHUB-USERNAME/youday-customizer/main/youday-customizer.user.js
-// @downloadURL  https://raw.githubusercontent.com/YOUR-GITHUB-USERNAME/youday-customizer/main/youday-customizer.user.js
-// @supportURL   https://github.com/YOUR-GITHUB-USERNAME/youday-customizer/issues
+// @updateURL    https://github.com/BellJohnathan/youday-customizer/raw/refs/heads/main/youday-customizer.user.js
+// @downloadURL  https://github.com/BellJohnathan/youday-customizer/raw/refs/heads/main/youday-customizer.user.js
+
 // ==/UserScript==
 
 (function() {
