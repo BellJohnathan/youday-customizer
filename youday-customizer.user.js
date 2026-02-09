@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youday Interface Customizer
 // @namespace    http://tampermonkey.net/
-// @version      2.5.9
+// @version      2.5.10
 // @description  Modern interface customization for Youday CRM with Lucide icons, improved layouts, and enhanced UX
 // @author       Johnathan Bell
 // @match        https://youday.app/*
@@ -336,6 +336,8 @@
                 content: url('https://raw.githubusercontent.com/BellJohnathan/youday-customizer/refs/heads/main/logo-technopole-transparent-max.svg') !important;
                 max-height: 40px;
                 width: auto;
+                padding: 8px 0px 0px 0px;
+                margin: 2px 0px 0px 0px;
             }
 
             /* Navbar Background */
