@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youday Interface Customizer
 // @namespace    http://tampermonkey.net/
-// @version      2.5.7
+// @version      2.5.9
 // @description  Modern interface customization for Youday CRM with Lucide icons, improved layouts, and enhanced UX
 // @author       Johnathan Bell
 // @match        https://youday.app/*
@@ -678,7 +678,8 @@
             }
             
             /* Order buttons within first btn-group-devided */
-            body:has(#maintabbar-ZZ8BB1DCF2) .toolbar#list-toolbar .btn.purple-soft:has(i.fa-columns) {
+            body:has(#maintabbar-ZZ8BB1DCF2) .toolbar#list-toolbar .btn.purple-soft:has(i.fa-columns),
+            body:has(#maintabbar-ZZ8BB1DCF2) .toolbar#list-toolbar .btn.purple-soft[title="Columns"] {
                 order: 1 !important;
             }
             
@@ -707,7 +708,8 @@
             /* BUTTON STYLING - SECONDARY BUTTONS (Light grey stroke, white bg) */
             
             /* Columns button */
-            body:has(#maintabbar-ZZ8BB1DCF2) .toolbar#list-toolbar .btn.purple-soft:has(i.fa-columns) {
+            body:has(#maintabbar-ZZ8BB1DCF2) .toolbar#list-toolbar .btn.purple-soft:has(i.fa-columns),
+            body:has(#maintabbar-ZZ8BB1DCF2) .toolbar#list-toolbar .btn.purple-soft[title="Columns"] {
                 background: #ffffff !important;
                 border: 1px solid #e5e7eb !important;
                 color: #1f2937 !important;
@@ -717,7 +719,8 @@
                 transition: all 0.2s ease;
             }
             
-            body:has(#maintabbar-ZZ8BB1DCF2) .toolbar#list-toolbar .btn.purple-soft:has(i.fa-columns):hover {
+            body:has(#maintabbar-ZZ8BB1DCF2) .toolbar#list-toolbar .btn.purple-soft:has(i.fa-columns):hover,
+            body:has(#maintabbar-ZZ8BB1DCF2) .toolbar#list-toolbar .btn.purple-soft[title="Columns"]:hover {
                 background: #f9fafb !important;
                 border-color: #d1d5db !important;
             }
@@ -865,22 +868,41 @@
                 border-color: #0f172a !important;
                 color: #ffffff !important;
             }
+            
+            /* ============================================ */
+            /* CUSTOM MODIFICATIONS (v2.5.9) */
+            /* ============================================ */
+            
+            /* 1. Map Organisme button - hide icon, show only "Map" text */
+            body:has(#maintabbar-ZZ8BB1DCF2) .toolbar#list-toolbar .btn[title="Map Organisme"] i.fa-map-o {
+                display: none !important;
+            }
+            
+            body:has(#maintabbar-ZZ8BB1DCF2) .toolbar#list-toolbar .btn[title="Map Organisme"] .hidden-xs {
+                font-size: 0 !important;
+            }
+            
+            body:has(#maintabbar-ZZ8BB1DCF2) .toolbar#list-toolbar .btn[title="Map Organisme"] .hidden-xs::after {
+                content: 'Map' !important;
+                font-size: 14px !important;
+            }
+            
+            /* 2. Hide the Emetteur facture button group (order: 3) entirely */
+            body:has(#maintabbar-ZZ8BB1DCF2) .toolbar#list-toolbar > .btn-group-grouped:has(.btn[title="Emetteur facture"]) {
+                display: none !important;
+            }
+            
+            /* 3. Remove the ::before divider from Columns button */
+            body:has(#maintabbar-ZZ8BB1DCF2) .toolbar#list-toolbar .btn.purple-soft:has(i.fa-columns)::before,
+            body:has(#maintabbar-ZZ8BB1DCF2) .toolbar#list-toolbar .btn.purple-soft[title="Columns"]::before {
+                display: none !important;
+                content: none !important;
+            }
 
             /* 3. VERTICAL DIVIDERS */
             
             /* Divider 1: Between search bar and export button */
             body:has(#maintabbar-ZZ8BB1DCF2) .toolbar#list-toolbar .btn-toolbar-search::before {
-                content: '' !important;
-                display: inline-block !important;
-                width: 1px !important;
-                height: 24px !important;
-                background-color: #e5e7eb !important;
-                margin-right: 12px !important;
-                vertical-align: middle;
-            }
-            
-            /* Divider 2: Between columns button and émetteur facture buttons */
-            body:has(#maintabbar-ZZ8BB1DCF2) .toolbar#list-toolbar .btn.purple-soft:has(i.fa-columns)::before {
                 content: '' !important;
                 display: inline-block !important;
                 width: 1px !important;
@@ -985,6 +1007,7 @@
             if (organismesTab && organismesTab.closest('li').classList.contains('current')) {
                 reorganizeToolbar();
                 hideRedundantSearchTags();
+                replaceColumnsButtonIcon();
                 
                 // Set up mutation observer to handle dynamic content changes
                 setupToolbarObserver();
@@ -1004,6 +1027,7 @@
             clearTimeout(window.toolbarReorganizeTimeout);
             window.toolbarReorganizeTimeout = setTimeout(() => {
                 reorganizeToolbar();
+                replaceColumnsButtonIcon();
             }, 100);
         });
 
@@ -1076,7 +1100,7 @@
             firstDevided.style.margin = '0';
             
             // Order buttons inside: Columns (1), Filter (2), New (3)
-            const columnsBtn = firstDevided.querySelector('.btn:has(i.fa-columns)');
+            const columnsBtn = firstDevided.querySelector('.btn:has(i.fa-columns), .btn[title="Columns"]');
             const filterBtn = firstDevided.querySelector('.btn:has(i.fa-filter)');
             const newBtn = firstDevided.querySelector('.btn.green-meadow, .btn:has(i.fa-plus)');
             
@@ -1121,6 +1145,7 @@
                         setTimeout(() => {
                             setTimeout(() => {
                                 reorganizeToolbar();
+                                replaceColumnsButtonIcon();
                             }, 500);
                         }, 100);
                     });
@@ -1179,6 +1204,41 @@
             }
         }
     }
+    
+    // Function to replace the Columns button icon with Lucide columns-2
+    function replaceColumnsButtonIcon() {
+        // Wait for Lucide to be loaded
+        if (typeof lucide === 'undefined') {
+            setTimeout(replaceColumnsButtonIcon, 100);
+            return;
+        }
+        
+        // Find the Columns button
+        const columnsBtn = document.querySelector('.toolbar#list-toolbar .btn.purple-soft[title="Columns"]');
+        if (!columnsBtn) return;
+        
+        // Find the FontAwesome icon
+        const faIcon = columnsBtn.querySelector('i.fa-columns');
+        if (faIcon && !faIcon.hasAttribute('data-lucide-columns-replaced')) {
+            // Create Lucide icon element
+            const lucideIcon = document.createElement('i');
+            lucideIcon.setAttribute('data-lucide', 'columns-2');
+            lucideIcon.setAttribute('data-lucide-columns-replaced', 'true');
+            lucideIcon.style.width = '16px';
+            lucideIcon.style.height = '16px';
+            lucideIcon.style.display = 'inline-block';
+            lucideIcon.style.verticalAlign = 'middle';
+            lucideIcon.style.marginRight = '4px';
+            
+            // Replace the FontAwesome icon
+            faIcon.parentNode.replaceChild(lucideIcon, faIcon);
+            
+            // Re-initialize Lucide icons
+            if (lucide.createIcons) {
+                lucide.createIcons();
+            }
+        }
+    }
 
     // Re-initialize when navigating between sections or switching views
     document.addEventListener('click', function(e) {
@@ -1194,6 +1254,7 @@
                 const organismesTab = document.querySelector('#maintabbar-ZZ8BB1DCF2');
                 if (organismesTab && organismesTab.closest('li').classList.contains('current')) {
                     reorganizeToolbar();
+                    replaceColumnsButtonIcon();
                 }
             }, 1500);
         }
@@ -1208,6 +1269,7 @@
                 const organismesTab = document.querySelector('#maintabbar-ZZ8BB1DCF2');
                 if (organismesTab && organismesTab.closest('li').classList.contains('current')) {
                     reorganizeToolbar();
+                    replaceColumnsButtonIcon();
                 }
             }, 500);
             return response;
@@ -1403,6 +1465,9 @@
     lucideScript.onload = () => {
         // Initial replacement
         replaceFontAwesomeWithLucide();
+        
+        // Also replace the columns button icon
+        replaceColumnsButtonIcon();
 
         // Add single click event listener (only once)
         if (!hasAddedClickListener) {
