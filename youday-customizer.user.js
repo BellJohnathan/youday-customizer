@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youday Interface Customizer
 // @namespace    http://tampermonkey.net/
-// @version      2.5.5
+// @version      2.5.6
 // @description  Modern interface customization for Youday CRM with Lucide icons, improved layouts, and enhanced UX
 // @author       Johnathan Bell
 // @match        https://youday.app/*
@@ -63,7 +63,8 @@
 
             /* Temporary neutral background until SVG gradient is added */
             body.login {
-                background: background: linear-gradient(45deg,rgba(0, 83, 160, 1) 0%, rgba(33, 181, 234, 1) 50%, rgba(175, 202, 11, 1) 100%);
+                background: #0053A0;
+                background: linear-gradient(45deg,rgba(0, 83, 160, 1) 0%, rgba(33, 181, 234, 1) 50%, rgba(175, 202, 11, 1) 100%);
                 min-height: 100vh;
             }
 
