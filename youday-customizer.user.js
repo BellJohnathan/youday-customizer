@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youday Interface Customizer
 // @namespace    http://tampermonkey.net/
-// @version      2.5.2
+// @version      2.5.3
 // @description  Modern interface customization for Youday CRM with Lucide icons, improved layouts, and enhanced UX
 // @author       Johnathan Bell
 // @match        https://youday.app/*
@@ -74,7 +74,7 @@
 
             /* Replace logo with Technopole ATLAS - LOGIN PAGE */
             body.login .logo img {
-                content: url('https://raw.githubusercontent.com/YOUR-GITHUB-USERNAME/youday-customizer/main/assets/logos/technopole-atlas-login.svg') !important;
+                content: url('https://raw.githubusercontent.com/BellJohnathan/youday-customizer/refs/heads/main/logo_blanc_horizontal.svg') !important;
                 max-height: 60px !important;
                 width: auto !important;
             }
@@ -323,7 +323,7 @@
 
             /* Navbar Logo */
             #appLogo {
-                content: url('https://raw.githubusercontent.com/YOUR-GITHUB-USERNAME/youday-customizer/main/assets/logos/technopole-atlas-navbar.svg') !important;
+                content: url('https://raw.githubusercontent.com/BellJohnathan/youday-customizer/refs/heads/main/logo_transparent_horizontal.svg') !important;
                 max-height: 40px;
                 width: auto;
             }
