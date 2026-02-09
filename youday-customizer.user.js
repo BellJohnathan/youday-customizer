@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youday Interface Customizer
 // @namespace    http://tampermonkey.net/
-// @version      2.5.6
+// @version      2.5.7
 // @description  Modern interface customization for Youday CRM with Lucide icons, improved layouts, and enhanced UX
 // @author       Johnathan Bell
 // @match        https://youday.app/*
@@ -233,6 +233,15 @@
             body.login .form-actions .btn.blue {
                 order: 2 !important;
                 width: 100% !important;
+            }
+
+            /* Modifying padding after re-ordering button */
+            .login .content .form-actions {
+                padding: 0 0 0 0 !important;
+            }
+
+            .login .content .form-actions label.checkbox {
+                margin: 12px 25px !important;
             }
 
             /* Links */
